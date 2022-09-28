@@ -1,5 +1,5 @@
 (library
- (name test_something)
+ (name tests)
  (inline_tests)
  (libraries lib)
  (preprocess

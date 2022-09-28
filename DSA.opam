@@ -1,8 +1,8 @@
 opam-version: "2.0"
-synopsis: "A template for OCaml Tooling"
+synopsis: "41052 Advanced Algorithms Assignment 1: Topological Sort"
 version: "1.0"
-maintainer: "mukul.rathi@gmail.com"
-authors: ["Mukul Rathi"]
+maintainer: "oliversalman1@gmail.com"
+authors: ["Oliver Salman"]
 homepage: "https://github.com/mukul-rathi/ocaml-testing-template"
 bug-reports: "https://github.com/mukul-rathi/ocaml-testing-template/issues"
 dev-repo: "git+https://github.com/mukul-rathi/ocaml-testing-template.git"
