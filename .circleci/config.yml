@@ -31,9 +31,6 @@ jobs:
       - run:
           name: "Make docs"
           command: opam exec -- make doc
-      - run:
-          name: "Provision custom domain"
-          command: echo "ocamltest.mukulrathi.com" > docs/CNAME
       - persist_to_workspace:
           root: ./
           paths: docs
