@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: cache-{{ checksum "hello_world.opam" }}
+          key: cache-{{ checksum "DSA.opam" }}
       - run:
           name: "Update Opam"
           command: cd /home/opam/opam-repository && git pull && opam update && cd - && eval $(opam env)
@@ -16,7 +16,7 @@ jobs:
           name: "Install deps"
           command: sudo apt-get install -y m4  && make install
       - save_cache:
-          key: cache-{{ checksum "hello_world.opam" }}
+          key: cache-{{ checksum "DSA.opam" }}
           paths:
             - ~/.opam
       - run:
@@ -46,8 +46,8 @@ jobs:
           name: Install and configure dependencies
           command: |
             npm install -g --silent gh-pages@2.0.1
-            git config user.email "mukul.rathi@gmail.com"
-            git config user.name "mukul-rathi"
+            git config user.email "oliversalman1@gmail.com"
+            git config user.name "os12345678"
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist docs/ --message "[skip ci] Update docs"
