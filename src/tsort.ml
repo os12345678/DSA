@@ -46,4 +46,4 @@ let rec print_sorted = function
   | [x]     -> print_int x
   | x :: xs -> print_int x ; print_string " -> " ; print_sorted xs
 
-let _ = print_sorted sorted
+(* let _ = print_sorted sorted *)
