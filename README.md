@@ -21,4 +21,4 @@ The Makefile consists of a list of useful commands:
 
 ## Generating Documentation
 
-The repo uses GitHub Pages to display the [generated documentation](http://ocamltest.mukulrathi.com/).
+The repo uses GitHub Pages to display the [generated documentation](http://ocamltest.os12345678.com/).
