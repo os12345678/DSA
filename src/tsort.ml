@@ -21,7 +21,6 @@ let graph = [(1, [2]); (2, [3]); (3, [4; 7; 6])]
     @return
       a topological ordering of the graph, or raises [CycleFound] if a cycle is found *)
 
-(** call dfs on [start_node]*)
 let dfs graph visited start_node =
   let rec explore path visited node =
     if List.mem node path then raise (CycleFound path)
