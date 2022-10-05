@@ -13,6 +13,9 @@ install:
 test:
 	dune runtest 
 
+run:
+	ocaml src/tsort.ml
+
 clean:
 	dune clean
 	git clean -dfX
