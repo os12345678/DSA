@@ -34,12 +34,19 @@ previously visited nodes. It the sorted nodes into the [visited] list for each c
 @exception [Not_found] graph representation is invalid
 *)
 let dfs graph visited start_node =
+  (* define the function that will be called recursively to explore the graph.*)
   let rec explore path visited node =
+    (* If the currentnode is already in the path, then a cycle has been found. *)
     if is_in node path then raise (CycleFound path)
+      (* If the current node has already been visited, then mark it as visited and return
+         the visited list.*)
     else if is_in node visited then visited
     else
+      (* append the current node to the path and mark it as visited *)
       let update_path = node :: path in
+      (* update the edges of the current node to include the path so far. *)
       let update_edges = try assoc node graph with Not_found -> [] in
+      (*explore the edges of the current node and return the updated visited list. *)
       let update_visited = fold_left (explore update_path) visited update_edges in
       node :: update_visited in
   explore [] visited start_node
