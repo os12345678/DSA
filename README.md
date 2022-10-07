@@ -27,22 +27,28 @@ The algorithm is implemented using a modified depth-first search algorithm. The 
 
 - Output `tsort`: int list --> i.e [1; 2; 3; 5; 4];;
 
-For more information about the algorithm, its implementation, complexity, limitations, and assumptions, see the [report](https://github.com/os12345678/DSA/blob/master/40152%20Advanced%20Algorithms%20Assignment%201.docx)
+For more information about the algorithm, its implementation, complexity, limitations, and assumptions, see the [report](https://github.com/os12345678/DSA/blob/master/report.tex)
 
 ## Compiling the program
 
-First run `make build` to build the project. There should be no errors or warnings.
+First run `make install` to install all required dependencies. If ther is an error, double check your ocaml compiler is up to date. Running `opam switch list` will show you which version of the compiler you are using. For reference, the compiler version used to develop this program is `4.14.0`.
+
+Then run `make build` to build the program.
 
 Then run `make run` to run the program. This command will run the program and print out the topological sort of the graph.
 
 To run the program with different graphs, it can be done by either:
 
-- Changing the `graph` definition in `tsort.ml`, and re-running `make run`
+- Changing the `graph` definition in `tsort.ml`, and re-running `make build` and then `make run`
 
-- (Recommended) In the command line type `utop` to open up OCaML's universal toplevel. This is for testing out small snippets of code. Then type `#use "tsort.ml"` to load the code from `tsort.ml`. Then type `tsort [graph of choice]` to run the program with custom graphs. Refer to the type of graph needed to be passed into the tsort function, above.
+- (Recommended) In the command line type `utop` to open up OCaML's universal toplevel. This is for testing out small snippets of code. Then type `#use "tsort.ml"` to load the code from `tsort.ml`. Then type `tsort [graph of choice]` (for example `tsort [(1, [2; 3]); (2, [5; 4])];;`)to run the program with different input graphs. Refer to the type of graph needed to be passed into the tsort function, above.
 
 ## Testing
 
-The tests are located in the `test/` folder. The tests are written using the Jane Streets' `ppx_expect` testing framework which mimics the existing inline tests framework with the `let%expect` construct.
+The tests are located in the `test/` folder. The tests are written using the Jane Streets' `ppx_expect` testing framework which mimics the existing inline tests framework with the `let%expect` construct. The expectations of the tests were built using the `ppx_expect` auto-generated test output. The library generates `.ml.corrected` files in the `_build/` directory when the tets are run. This is done using the command `dune runtest --auto-promote`.
 
 To run the tests, run `make test`.
+
+The tests are not exhaustive, and are only meant to test the basic functionality of the program.
+
+P.s I am unsure how to test for exceptions without including a backtrace in the testing expectation, the compiler screams at me for doing so. I have commented those particular tests out for now, but the program does throw exceptions when it is supposed to.
