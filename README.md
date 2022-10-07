@@ -19,10 +19,6 @@ The Makefile consists of a list of useful commands:
 
 `make doc` generates the documentation and copies it into a `docs/` folder in the root of the repo`.
 
-## Generating Documentation: TODO
-
-The repo uses GitHub Pages to display the [generated documentation](http://ocamltest.os12345678.com/).
-
 ## About the algorithm
 
 The algorithm is implemented using a modified depth-first search algorithm. The input is a directed graph, and the output is a list of vertices in topological order. The algorithm works by performing a depth-first search on the graph, and adding each vertex to the output list in reverse order of when it is finished being explored. This is done by using a stack to store the vertices in the order they are finished being explored. The algorithm is implemented in the `tsort` function in `src/tsort.ml`.
