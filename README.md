@@ -1,4 +1,4 @@
-# 41052 Advanced Algorithms Assignment 1: Topological Sort
+# Tsort
 
 ## Tutorials
 
